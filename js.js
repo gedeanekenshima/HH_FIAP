@@ -1,42 +1,48 @@
-function AlteraRele1(){
-    var estado = document.getElementById("estado").textContent;
-    if(estado === "0"){
-        document.getElementById("estado").textContent = "1";
-        document.getElementById("rele").className = "rele1_ligado";
-        document.getElementById("botao").innerHTML = "<a href='/?desligar' class='botao'>Desliga</a>";
+// Funções para controle dos relés
+function AlteraRele1() {
+    var link = document.querySelector('#botao a');
+    var rele = document.getElementById('rele');
+    if(link.textContent === 'Ligar') {
+        rele.className = 'rele1_ligado';
+        link.textContent = 'Desligar';
+        link.href = '/?desligar';
     } else {
-        document.getElementById("estado").textContent = "0";
-        document.getElementById("rele").className = "rele1_desligado";
-        document.getElementById("botao").innerHTML = "<a href='/?ligar' class='botao'>Liga</a>";
+        rele.className = 'rele1_desligado';
+        link.textContent = 'Ligar';
+        link.href = '/?ligar';
     }
 }
 
-function AlteraRele2(){
-    var estado_2 = document.getElementById("estado_2").textContent;
-    if(estado_2 === "0"){
-        document.getElementById("estado_2").textContent = "1";
-        document.getElementById("rele_2").className = "rele2_ligado";
-        document.getElementById("botao_2").innerHTML = "<a href='/?2_desligar' class='botao_2'>Desliga</a>";
+function AlteraRele2() {
+    var link = document.querySelector('#botao_2 a');
+    var rele = document.getElementById('rele_2');
+    if(link.textContent === 'Ligar') {
+        rele.className = 'rele2_ligado';
+        link.textContent = 'Desligar';
+        link.href = '/?2_desligar';
     } else {
-        document.getElementById("estado_2").textContent = "0";
-        document.getElementById("rele_2").className = "rele2_desligado";
-        document.getElementById("botao_2").innerHTML = "<a href='/?2_ligar' class='botao_2'>Liga</a>";
+        rele.className = 'rele2_desligado';
+        link.textContent = 'Ligar';
+        link.href = '/?2_ligar';
     }
 }
 
-// Inicialização dos elementos quando a página carrega
+// Inicialização
 document.addEventListener('DOMContentLoaded', function() {
-    // Verifica se os elementos existem antes de manipular
-    if(document.getElementById("rele")) {
-        document.getElementById("rele").className = "rele1_desligado";
+    // Configura estado inicial dos relés
+    var link1 = document.querySelector('#botao a');
+    var rele1 = document.getElementById('rele');
+    if(link1.textContent === 'Desligar') {
+        rele1.className = 'rele1_ligado';
+    } else {
+        rele1.className = 'rele1_desligado';
     }
-    if(document.getElementById("rele_2")) {
-        document.getElementById("rele_2").className = "rele2_desligado";
-    }
-    if(document.getElementById("botao")) {
-        document.getElementById("botao").innerHTML = "<a href='/?ligar' class='botao'>Liga</a>";
-    }
-    if(document.getElementById("botao_2")) {
-        document.getElementById("botao_2").innerHTML = "<a href='/?2_ligar' class='botao_2'>Liga</a>";
+    
+    var link2 = document.querySelector('#botao_2 a');
+    var rele2 = document.getElementById('rele_2');
+    if(link2.textContent === 'Desligar') {
+        rele2.className = 'rele2_ligado';
+    } else {
+        rele2.className = 'rele2_desligado';
     }
 });
