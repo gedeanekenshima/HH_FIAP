@@ -1,71 +1,72 @@
 body {
     margin: 0;
-    padding: 0;
+    padding: 20px;
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
 }
 
 #wrapper {
-    padding-top: 40px;
     position: relative;
     width: 530px;
-    height: 600px;
     margin: 0 auto;
     text-align: center;
 }
 
 /* Estilos para os relés */
-.rele1_ligado {
+.rele-ligado, .rele-desligado {
     position: absolute;
-    right: -110px;
+    width: 300px;
+    height: 206px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#rele1 {
     top: 220px;
-    width: 300px;
-    height: 206px;
-    background: url('https://raw.githubusercontent.com/gedeanekenshima/HH_FIAP/main/LED_ON.png') no-repeat;
-    background-size: contain;
+    right: -110px;
 }
 
-.rele1_desligado {
-    position: absolute;
-    right: -110px;
-    top: 220px;
-    width: 300px;
-    height: 206px;
-    background: url('https://raw.githubusercontent.com/gedeanekenshima/HH_FIAP/main/LED_OFF.png') no-repeat;
-    background-size: contain;
-}
-
-.rele2_ligado {
-    position: absolute;
-    right: -110px;
+#rele2 {
     top: 387px;
-    width: 300px;
-    height: 206px;
-    background: url('https://raw.githubusercontent.com/gedeanekenshima/HH_FIAP/main/LED_ON.png') no-repeat;
-    background-size: contain;
+    right: -110px;
 }
 
-.rele2_desligado {
-    position: absolute;
-    right: -110px;
-    top: 387px;
-    width: 300px;
-    height: 206px;
-    background: url('https://raw.githubusercontent.com/gedeanekenshima/HH_FIAP/main/LED_OFF.png') no-repeat;
-    background-size: contain;
+.rele-ligado {
+    background-image: url('https://raw.githubusercontent.com/gedeanekenshima/HH_FIAP/main/LED_ON.png');
+}
+
+.rele-desligado {
+    background-image: url('https://raw.githubusercontent.com/gedeanekenshima/HH_FIAP/main/LED_OFF.png');
 }
 
 /* Estilos para os botões */
-.botao, .botao_2 {
+.botao {
     display: inline-block;
-    padding: 10px 40px;
-    margin: 5px;
+    padding: 10px 20px;
     background-color: #ed145b;
     color: white;
     text-decoration: none;
     border-radius: 6px;
     font-size: 28px;
-    font-weight: bold;
-    width: 100px;
-    text-align: center;
-    transition
+    transition: background-color 0.2s;
+}
+
+.botao:hover {
+    background-color: #ff3a7a;
+}
+
+.botao:active {
+    background-color: #d01251;
+}
+
+#botao1 {
+    position: absolute;
+    right: 230px;
+    top: 250px;
+}
+
+#botao2 {
+    position: absolute;
+    right: 230px;
+    top: 417px;
+}
