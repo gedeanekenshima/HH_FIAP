@@ -1,33 +1,33 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Atualiza os estados iniciais
-    updateReleStates();
-    
-    // Configura eventos para os botões
-    document.querySelector('#botao a').addEventListener('click', function(e) {
-        setTimeout(updateReleStates, 100); // Atualiza após o clique
+    // Configura os eventos de clique para recarregar a página
+    document.querySelector('#botao1 a').addEventListener('click', function(e) {
+        // A ação já está no href, só precisamos garantir o recarregamento
     });
     
-    document.querySelector('#botao_2 a').addEventListener('click', function(e) {
-        setTimeout(updateReleStates, 100); // Atualiza após o clique
+    document.querySelector('#botao2 a').addEventListener('click', function(e) {
+        // A ação já está no href, só precisamos garantir o recarregamento
     });
+    
+    // Verificação inicial para garantir que as imagens estão corretas
+    updateReleImages();
 });
 
-function updateReleStates() {
+function updateReleImages() {
     // Atualiza Rele 1
-    var link1 = document.querySelector('#botao a');
-    var rele1 = document.getElementById('rele');
-    if(link1.textContent === 'Desligar') {
-        rele1.className = 'rele1_ligado';
+    const botao1 = document.querySelector('#botao1 a');
+    const rele1 = document.getElementById('rele1');
+    if(botao1.textContent === 'Desligar') {
+        rele1.className = 'rele-ligado';
     } else {
-        rele1.className = 'rele1_desligado';
+        rele1.className = 'rele-desligado';
     }
     
     // Atualiza Rele 2
-    var link2 = document.querySelector('#botao_2 a');
-    var rele2 = document.getElementById('rele_2');
-    if(link2.textContent === 'Desligar') {
-        rele2.className = 'rele2_ligado';
+    const botao2 = document.querySelector('#botao2 a');
+    const rele2 = document.getElementById('rele2');
+    if(botao2.textContent === 'Desligar') {
+        rele2.className = 'rele-ligado';
     } else {
-        rele2.className = 'rele2_desligado';
+        rele2.className = 'rele-desligado';
     }
 }
