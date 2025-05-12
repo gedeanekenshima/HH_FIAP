@@ -1,4 +1,13 @@
 /* 
+    FIAP - Hardware Hacking
+    Profª Gedeane Kenshima
+*/
+
+root { 
+    display: block;
+}
+
+/* 
     CSS for LED Control Interface
 */
 
@@ -11,81 +20,149 @@ body {
 
 #wrapper {
     padding-top: 40px;
+    position: relative;
     width: 530px;
     height: 600px;
-    margin: 0 auto;
-    text-align: center;
+	margin-right: auto;
+	margin-top: 0;
+	margin-left: auto;
+        font-size: 30px;
+        color: black;
+        text-align: center;
+        font-family: arial;
 }
 
-/* LED Box Styles */
-.led-box {
-    position: relative;
-    margin: 20px auto;
-    width: 350px;
-    height: 150px;
-    border-radius: 15px;
-    border: 2px solid #000000;
-    background-color: #000000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.led-box img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 10px;
-}
-
-/* Button Styles */
-.botao {
-    background-color: #ed145b;
+div.rele1_ligado {
+    position: absolute;
+    right: -110px;
+    top: 220px;
+    width: 300px;
+    height: 206px;
     border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 20px 10px;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		margin:auto;
+    background: url(LED_ON.png) no-repeat left top;
 }
 
-.botao:hover {
-    background-color: #c5114f;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+div.rele1_desligado {
+    position: absolute;
+    right: -110px;
+    top: 220px;
+    width: 300px;
+    height: 206px;
+    border: none;
+	background: url(LED_OFF.png) no-repeat left top;
 }
 
-.botao:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+div.rele2_ligado {
+    position: absolute;
+    right: -110px;
+    top: 387px;
+    width: 300px;
+    height: 206px;
+    border: none;
+    background: url(LED_ON.png) no-repeat left top;
 }
 
-/* Positioning for elements */
-#div1, #div2 {
-    margin: 20px auto;
+div.rele2_desligado {
+    position: absolute;
+    right: -110px;
+    top: 387px;
+    width: 300px;
+    height: 206px;
+    border: none;
+	background: url(LED_OFF.png) no-repeat left top;
 }
 
-#botao, #botao_2 {
-    display: inline-block;
+#div1 {
+	position: absolute;
+	right: 85px;
+	top: 195px;
+    border-radius: 25px;
+    border: 2px solid #000000;
+    width: 350px;
+    height: 150px; 
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    #wrapper {
-        width: 100%;
-        padding: 20px;
-    }
-    
-    .led-box {
-        width: 90%;
-    }
+#div2 {
+	position: absolute;
+	right: 85px;
+	top: 355px;
+    border-radius: 25px;
+    border: 2px solid #000000;
+    width: 350px;
+    height: 150px; 
+}
+
+#botao{
+    position: absolute;
+    right: 230px;
+    top: 250px;
+	 width: 200px;
+    height: 256px;
+}
+
+.botao {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 0px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.1, #ed145b), color-stop(1, #fd145b) );
+	background:-moz-linear-gradient( center top, #ed145b 5%, #fd145b 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed145b', endColorstr='#fd145b');
+	background-color:#ededed;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:28px;
+	font-weight:bold;
+	padding:10px 40px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #ffffff;
+        width: 100px;
+        text-align: center;
+}
+
+}.botao:active {
+	position:relative;
+	top:1px;
+}
+
+#botao_2{
+    position: absolute;
+    right: 230px;
+    top: 417px;
+	 width: 200px;
+    height: 256px;
+}
+
+.botao_2 {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 0px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.1, #ed145b), color-stop(1, #fd145b) );
+	background:-moz-linear-gradient( center top, #ed145b 5%, #fd145b 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed145b', endColorstr='#fd145b');
+	background-color:#ededed;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:28px;
+	font-weight:bold;
+	padding:10px 40px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #ffffff;
+        width: 100px;
+        text-align: center;
+}
+
+}.botao_2:active {
+	position:relative;
+	top:1px;
 }
